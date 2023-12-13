@@ -1,5 +1,7 @@
 import { BTN } from "../app/components/botao";
 
-<div>
-    <BTN>Entrar</BTN>
-</div>
+export default function CreateLogin() {
+    return (<div>
+        <BTN>Entrar</BTN>
+    </div>)
+}
