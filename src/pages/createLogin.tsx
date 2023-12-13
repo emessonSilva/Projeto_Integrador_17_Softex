@@ -1,4 +1,4 @@
-import { BTN } from "../components/botao";
+import { BTN } from "../app/components/botao";
 
 <div>
     <BTN>Entrar</BTN>
