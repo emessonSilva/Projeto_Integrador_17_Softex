@@ -1,5 +1,4 @@
-export function BTN() {
-    return (
-        <button>enviar</button>
-    )
+
+export function BTN(props:any) {
+    return <button>{props.nome}</button>;
 }
