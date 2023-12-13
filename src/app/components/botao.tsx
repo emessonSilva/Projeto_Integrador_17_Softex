@@ -1,11 +1,13 @@
+import React, { ReactNode } from 'react';
+
 interface propsButton {
-    name?: string;
+    // name?: string;
     width?: string;
     height?: string;
-  }
-  
-  export function BTN({ name, width, height }: propsButton) {
-    return <button style={{ width, height }}></button>;
-  }
-  
-  
+    children?: ReactNode
+}
+
+export function BTN({ children, width, height }: propsButton) {
+    return <button style={{ width, height }}>{children}</button>;
+}
+
