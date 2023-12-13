@@ -3,7 +3,7 @@ import { BTN } from "../app/components/botao";
 export default function CreateLogin() {
     return (
         <div>
-            <BTN width='10' height='10' >Entrar</BTN>
+      <BTN name="Cadastrar" width="200px" height="100px" />
         </div>
     );
 }
