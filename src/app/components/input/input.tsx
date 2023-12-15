@@ -2,9 +2,10 @@
 interface propsInput {
 
     placeholder: string;
-    type: string;
-    name: string;
-    value: string;
+    type?: string;
+    name?: string;
+    value?: string;
+
 }
 
 export default function Input({ name, placeholder, type, value }: propsInput) {
@@ -14,7 +15,9 @@ export default function Input({ name, placeholder, type, value }: propsInput) {
             type={type}
             name={name}
             placeholder={placeholder}
-        />
+        ></input>
+
+
     )
 }
 
