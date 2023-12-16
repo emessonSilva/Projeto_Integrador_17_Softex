@@ -1,0 +1,14 @@
+
+.title {
+    text-align: center;
+}
+
+.title h1, .title h2 {
+    display: block;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+}
+
