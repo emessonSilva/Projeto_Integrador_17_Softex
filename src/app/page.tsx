@@ -1,12 +1,9 @@
 
-
 export default function Home() {
+
   return (
     <main>
-      <h1>Git Branch teste Monique</h1>
-
-      <span>testando...</span>
-
+      <h1>Pagina do DashBoard</h1>
     </main>
   )
 }
