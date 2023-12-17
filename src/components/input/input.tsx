@@ -10,7 +10,7 @@ interface propsInput {
     height?: string;
     fontSize?: string;
     checked?: boolean;
-    onChange?: () => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export function Input({ name, placeholder, type, value, height, width, checked, fontSize, onChange }: propsInput) {
