@@ -1,0 +1,34 @@
+{
+  "empresas": [
+    {
+      "nomeEmpresa": "devNoob",
+      "cnpj": "25639874521",
+      "cep": "5014287",
+      "telefone": "85693265874",
+      "email": "marcelolopesvarzea@gmail.com",
+      "senha": "asdasd",
+      "confirmarSenha": "asdasd",
+      "id": "1GWAg7G"
+    },
+    {
+      "nomeEmpresa": "asdasdasdasdasdasd",
+      "cnpj": "asdasdasdasdasdasd",
+      "cep": "501428",
+      "telefone": "asdasdasdasdasdasd",
+      "email": "lkjlkjlkjlkj@gmail.com",
+      "senha": "asdasdasdasd",
+      "confirmarSenha": "asdasdasdasda",
+      "id": "JvLFbdK"
+    },
+    {
+      "nomeEmpresa": "emessom dev",
+      "cnpj": "2563987452132323",
+      "cep": "501428765656",
+      "telefone": "85693265874878",
+      "email": "emessomdev@gmail.com",
+      "senha": "6546546321321",
+      "confirmarSenha": "6546543213211",
+      "id": "rM_7p1I"
+    }
+  ]
+}
