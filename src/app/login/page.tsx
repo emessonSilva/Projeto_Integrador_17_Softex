@@ -10,11 +10,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
+
+
+
 export default function Login() {
 
     const [email, setEmail] = useState<string>('')
     const [validEmail, setValidEmail] = useState<boolean>(true)
     const [password, setPassword] = useState<boolean>(false)
+    const [isEmailValid, setIsEmailValid] = useState(true);
 
     //funçao para checar caracteres do email 
     function emailChecked(email: string): boolean {
@@ -33,6 +37,29 @@ export default function Login() {
     function showPassword() {
         setPassword(!password)
     }
+
+    const handleLogin = async () => {
+      try {
+        if (!validEmail) {
+          setIsEmailValid(false);
+          return;
+        }
+  
+        const response = await fetch(`http://192.168.3.42:3001/verificar-email?email=${email}`);
+        const data = await response.json();
+  
+        if (data.emailExistente) {
+          console.log('Email válido. Prosseguir com a autenticação...');
+          return <Link href="/dashboard"><a>Dashboard</a></Link>;
+        } else {
+          // email n existe
+          setIsEmailValid(false);
+        }
+      } catch (error) {
+        console.error('Erro ao verificar o email:', error);
+      }
+    };
+      
 
     return (
         <main>
@@ -89,7 +116,7 @@ export default function Login() {
           </div>
       
           <div style={{ textAlign: 'center',  marginTop: '50px' }}>
-            <BTN borderRadius={10} color="white" backgroundColor="#0F4EF0" type="button" name="Entrar" width="140px" height="50px" ></BTN>
+          <BTN borderRadius={10} color="white" backgroundColor="#0F4EF0" type="button" name="Entrar" width="140px" height="50px" onClick={handleLogin} />
           </div>
       
           <div style={{ textAlign: 'center' ,  marginTop: '60px'}}>

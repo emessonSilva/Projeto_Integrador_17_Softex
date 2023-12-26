@@ -29,7 +29,7 @@ export default function Register() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const response = await api.post("/empresas", formData);
+    const response = await api.post("http://192.168.3.42/empresas", formData);
   };
 
   return (
