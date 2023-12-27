@@ -89,7 +89,7 @@ export default function Login() {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <BTN borderRadius={10} color="white" backgroundColor="#0F4EF0" type="button" name="Entrar" width="140px" height="50px" ></BTN>
+        <BTN borderRadius={10} color="white" backgroundColor="#0F4EF0" type="button" name="Entrar" width="200px" height="50px" ></BTN>
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '60px' }}>
