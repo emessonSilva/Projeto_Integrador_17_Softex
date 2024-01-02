@@ -7,6 +7,7 @@ import { Input } from "@/components/input/input";
 import { useState } from "react";
 import Link from 'next/link';
 import BarChart from '@/components/grafics/grafic1';
+import MyAside from '@/components/aside/Myaside'
 
 export default function Home() {
 
@@ -16,29 +17,17 @@ export default function Home() {
   // function changeLoginIcon() {
   //   setLoginLogout(!loginLogout)
   // }
- 
+
   return (
-                                    //aqui pode botar o height:'100vh'
-    <body style={{ display: 'flex' , height: ''}}> 
+    //aqui pode botar o height:'100vh'
+    <body style={{ display: 'flex', height: '100vh', backgroundColor:"#010c15" }}>
+      <MyAside />
 
-    <aside style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px'}}>
-    <img style={{ background: 'black', width: '80px', height: '80px', borderRadius: '100%'}} /><p>nome da empresa logada</p>
-    <p title='Perfil' style={{ fontSize: '2.5rem' }}> <Link style={{ color: 'black' }} href="../profile"><i className="bi bi-person-circle" ></i></Link></p>
-    <p style={{ fontStyle: 'strong', fontSize: '1.5rem' }}>Filtros</p>
-    <label htmlFor="">Data ínicio</label><Input height="30px" type='date'></Input>
-    <label htmlFor="">Data Fim</label><Input height="30px" type='date'></Input>
-    <label htmlFor="">Cliente</label><Input height="30px"></Input>
-    <label htmlFor="">Produto</label><Input height="30px"></Input>
-    <label htmlFor="">Serviço</label><Input height="30px"></Input>
-    <p title='Logout' style={{ fontSize: '2.5rem' }}><Link style={{ color: 'black' }} href="../login"><i className="bi bi-box-arrow-in-right"></i></Link></p>
-    <p title='Informações sobre Kósmos Tecnologia' style={{ fontSize: '2.5rem' }}><i className="bi bi-info-circle"></i></p>
-    </aside>
-
-    <main style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <main style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
 
-          <div style={{padding: '20px', width: '600px', height: '400px' }}>
-          <BarChart></BarChart>
+          <div style={{ padding: '20px', width: '600px', height: '400px' }}>
+            <BarChart></BarChart>
           </div>
 
           <div style={{ backgroundColor: 'green', padding: '20px', width: '500px', height: '300px', color: 'white' }}>
@@ -52,10 +41,10 @@ export default function Home() {
           <div style={{ backgroundColor: 'purple', padding: '20px', width: '500px', height: '300px', color: 'white' }}>
             <h1>Gráfico 4</h1>
           </div>
-      </div>
-    </main>
-    
-  </body>
+        </div>
+      </main>
+
+    </body>
 
   )
 }

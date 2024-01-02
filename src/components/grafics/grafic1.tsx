@@ -4,7 +4,9 @@ import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Toolti
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const options = {
+
+// Configurações do gráfico
+const chartOptions = {
   responsive: true,
   plugins: {
     legend: {
@@ -17,10 +19,9 @@ const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-const data = {
-  labels,
+// Dados do gráfico
+const chartData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
   datasets: [
     {
       label: 'Dataset 1',
@@ -36,7 +37,7 @@ const data = {
 };
 
 const BarChart = () => {
-  return <Bar options={options} data={data} />;
+  return <Bar options={chartOptions} data={chartData} />;
 };
 
 export default BarChart;
