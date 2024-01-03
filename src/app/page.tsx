@@ -6,8 +6,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Input } from "@/components/input/input";
 import { useState } from "react";
 import Link from 'next/link';
-import BarChart from '@/components/grafics/grafic1';
-import LineChart from '@/components/grafics/grafic2';
+import BarChart from '@/components/grafics/Bar';
+import LineChart from '@/components/grafics/Line';
 
 export default function Home() {
 
@@ -43,8 +43,7 @@ export default function Home() {
             <BarChart></BarChart>
           </div>
 
-          <div style={{ backgroundColor: 'green', padding: '20px', width: '500px', height: '300px', color: 'white' }}>
-            <h1>Gráfico 2</h1>
+          <div style={{ padding: '20px', width: '600px', height: '400px' }}>
           </div>
 
           <div style={{ padding: '20px', width: '600px', height: '400px', color: 'white' }}>
