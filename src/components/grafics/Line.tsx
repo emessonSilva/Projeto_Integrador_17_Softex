@@ -13,25 +13,26 @@ const options = {
         },
         title: {
             display: true,
-            text: 'Chart.js Line Chart',
+            text: 'Ganhos',
         },
     },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
 const data = {
     labels,
     datasets: [
         {
-            label: 'Dataset 1',
-            data: [500, 700, 300, 200, 800, 400, 600], // Dados fictícios
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            label: 'Serviços',
+            data: [1100, 500, 50, 1300, 850, 3700, 400, 2300, 100, 600, 300, 1500], // Dados fictícios
+            backgroundColor: 'rgba(7, 247, 7, 0.9)',
         },
+
         {
-            label: 'Dataset 2',
-            data: [300, 400, 200, 100, 600, 300, 500], // Dados fictícios
-            backgroundColor: 'rgba(53, 162, 235, 0.5)',
+            label: 'Produtos',
+            data: [250, 900, 2250, 1300, 500, 2300, 800, 1300, 300, 750, 450, 2500], // Dados fictícios
+            backgroundColor: 'rgba(15, 150, 240, 0.95)',
         },
     ],
 };
