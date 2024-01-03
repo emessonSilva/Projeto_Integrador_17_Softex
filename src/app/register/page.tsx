@@ -43,8 +43,13 @@ export default function Login() {
   // async function handleSubmit(e: React.FormEvent) {
   //   e.preventDefault();
 
+<<<<<<< HEAD
+    const response = await api.post("http://192.168.3.42/empresas", formData);
+  };
+=======
   //   const response = await api.post("/empresas", formData);
   // };
+>>>>>>> 75a815b8eb2fd1741d8a9d9b2184e515a18ca186
 
   return (
     <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
