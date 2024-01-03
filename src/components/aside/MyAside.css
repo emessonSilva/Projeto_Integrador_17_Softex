@@ -1,0 +1,54 @@
+.my-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  width: 250px;
+  background-color: #1e1d1d;
+  border-radius: 20px;
+}
+
+.company-info {
+  text-align: center;
+}
+
+.company-logo {
+  background: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.company-name {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: white
+}
+
+.profile-link,
+.logout,
+.info {
+  font-size: 2.5rem;
+}
+
+.filter-title {
+  font-size: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-top: 10px;
+  max-width: 100%; 
+}
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.filters {
+  color: white;
+}
+
