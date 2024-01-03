@@ -22,6 +22,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/chart.js": "^2.9.41",
     "@types/faker": "^6.6.9",
     "@types/jquery": "^3.5.29",
     "@types/node": "^20",
@@ -29,6 +30,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "chart.js": "^3.7.0"
   }
 }

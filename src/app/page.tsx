@@ -7,6 +7,7 @@ import { Input } from "@/components/input/input";
 import { useState } from "react";
 import Link from 'next/link';
 import BarChart from '@/components/grafics/Bar';
+import PieChart from '@/components/grafics/Pie';
 
 export default function Home() {
 
@@ -38,10 +39,11 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
 
           <div style={{padding: '20px', width: '600px', height: '400px' }}>
-          <BarChart></BarChart>
+            <BarChart></BarChart>
           </div>
 
           <div style={{padding: '20px', width: '600px', height: '400px' }}>
+            <PieChart></PieChart>
           </div>
 
           <div style={{ backgroundColor: 'orange', padding: '20px', width: '500px', height: '300px', color: 'white' }}>
