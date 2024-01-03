@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Input } from "@/components/input/input";
 import { useState } from "react";
 import Link from 'next/link';
-import BarChart from '@/components/grafics/Bar';
+import LineChart from '@/components/grafics/Line';
 
 export default function Home() {
 
@@ -38,13 +38,14 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
 
           <div style={{padding: '20px', width: '600px', height: '400px' }}>
-            <BarChart></BarChart>
+            <LineChart></LineChart>
           </div>
 
-          <div style={{padding: '20px', width: '600px', height: '400px' }}>
+          <div style={{backgroundColor: 'blue',padding: '20px', width: '500px', height: '300px', color: 'white'}}>
+          <h1>Gráfico 2</h1>
           </div>
 
-          <div style={{ backgroundColor: 'orange', padding: '20px', width: '500px', height: '300px', color: 'white' }}>
+          <div style={{ backgroundColor: 'orange',padding: '20px', width: '500px', height: '300px', color: 'white' }}>
             <h1>Gráfico 3</h1>
           </div>
 
