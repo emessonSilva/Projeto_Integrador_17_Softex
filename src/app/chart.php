@@ -1,51 +1,50 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "Eme#8710";
-$dbname = "studioYoga";
 
-// Criar uma conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+$pdo = new PDO('mysql:host=localhost;dbname=studioYoga;port=3306;charset=utf8', 'seu_usuario', 'sua_senha');
 
-// Verificar a conexão
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
-
-// Consulta SQL
-$sql = "
-    SELECT
-        aula.AulaID,
-        aula.Nome_Aula,
-        COUNT(presenca.PresencaID) as Numero_Presencas
-    FROM
-        aula
-    LEFT JOIN
-        presenca ON aula.AulaID = presenca.AulaID
-    GROUP BY
-        aula.AulaID, aula.Nome_Aula;
+// Consulta para obter a quantidade total de aulas por mês
+$sqlTotalAulasPorMes = "
+    SELECT MONTH(Data_Aula) AS Mes, COUNT(*) AS TotalAulas
+    FROM aula
+    GROUP BY Mes
 ";
 
-$result = $conn->query($sql);
+$statementTotalAulasPorMes = $pdo->prepare($sqlTotalAulasPorMes);
+$statementTotalAulasPorMes->execute();
 
-// Verificar se há resultados
-if ($result->num_rows > 0) {
-    // Construir um array associativo com os resultados
-    $data = array();
-    while ($row = $result->fetch_assoc()) {
-        $data[] = array(
-            'Nome_Aula' => $row['Nome_Aula'],
-            'Numero_Presencas' => (int)$row['Numero_Presencas'],
-        );
-    }
-
-    // Retornar os dados como JSON
-    header('Content-Type: application/json');
-    echo json_encode($data);
-} else {
-    echo "Não há resultados.";
+$totalAulasPorMes = [];
+while ($row = $statementTotalAulasPorMes->fetch(PDO::FETCH_ASSOC)) {
+    $totalAulasPorMes[$row['Mes']] = $row['TotalAulas'];
 }
 
-// Fechar a conexão
-$conn->close();
-?>
+// Consulta para obter a porcentagem de presença por mês
+$sqlPresencaPorMes = "
+    SELECT MONTH(Data_Presenca) AS Mes, COUNT(*) AS TotalPresencas
+    FROM presenca
+    WHERE Presente = true
+    GROUP BY Mes
+";
+
+$statementPresencaPorMes = $pdo->prepare($sqlPresencaPorMes);
+$statementPresencaPorMes->execute();
+
+$presencaPorMes = [];
+while ($row = $statementPresencaPorMes->fetch(PDO::FETCH_ASSOC)) {
+    $presencaPorMes[$row['Mes']] = $row['TotalPresencas'];
+}
+
+// Calcular a porcentagem de presença por mês
+$porcentagemPorMes = [];
+foreach ($totalAulasPorMes as $mes => $totalAulas) {
+    $presencas = isset($presencaPorMes[$mes]) ? $presencaPorMes[$mes] : 0;
+    $porcentagem = ($presencas / $totalAulas) * 100;
+    $porcentagemPorMes[$mes] = round($porcentagem, 2);
+}
+
+// Formatar os resultados para saída JSON
+$resultadoFinal = [];
+foreach ($porcentagemPorMes as $mes => $porcentagem) {
+    $resultadoFinal[] = ['Mes' => $mes, 'Porcentagem' => $porcentagem];
+}
+
+echo json_encode($resultadoFinal);
