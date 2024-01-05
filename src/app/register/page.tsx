@@ -12,26 +12,26 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function Login() {
 
-    const [email, setEmail] = useState<string>('')
-    const [validEmail, setValidEmail] = useState<boolean>(true)
-    const [password, setPassword] = useState<boolean>(false)
+  const [email, setEmail] = useState<string>('')
+  const [validEmail, setValidEmail] = useState<boolean>(true)
+  const [password, setPassword] = useState<boolean>(false)
 
-    //funçao para checar caracteres do email 
-    function emailChecked(email: string): boolean {
-        const regex = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-        return regex.test(email);
-    }
+  //funçao para checar caracteres do email 
+  function emailChecked(email: string): boolean {
+    const regex = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    return regex.test(email);
+  }
 
-    //funçao para validar email
-    function handleChangeEmail(newEmail: string) {
-        setEmail(newEmail);
-        setValidEmail(emailChecked(newEmail));
-    };
+  //funçao para validar email
+  function handleChangeEmail(newEmail: string) {
+    setEmail(newEmail);
+    setValidEmail(emailChecked(newEmail));
+  };
 
-    //funçao para mostrar e esconder senha
-    function showPassword() {
-        setPassword(!password)
-    }
+  //funçao para mostrar e esconder senha
+  function showPassword() {
+    setPassword(!password)
+  }
 
   //   //funçao para salvar dados digitados
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,13 +43,9 @@ export default function Login() {
   // async function handleSubmit(e: React.FormEvent) {
   //   e.preventDefault();
 
-<<<<<<< HEAD
-    const response = await api.post("http://192.168.3.42/empresas", formData);
-  };
-=======
   //   const response = await api.post("/empresas", formData);
   // };
->>>>>>> 75a815b8eb2fd1741d8a9d9b2184e515a18ca186
+
 
   return (
     <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -57,9 +53,9 @@ export default function Login() {
         <h1>Cadastre-se</h1>
       </div>
 
-      <div style={{height: '4px', width: '70%', backgroundColor: 'black', borderRadius: '2px', marginTop: '10px'}}/>
+      <div style={{ height: '4px', width: '70%', backgroundColor: 'black', borderRadius: '2px', marginTop: '10px' }} />
 
-      
+
 
       <form
         style={{
@@ -91,7 +87,7 @@ export default function Login() {
             />
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'cnpj' }}>
           <div className="form-group">
             <label htmlFor="exampleInputText1">CNPJ/MEI</label>
@@ -104,7 +100,7 @@ export default function Login() {
             />
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'cep' }}>
           <div className="form-group">
             <label htmlFor="exampleInputText2">CEP</label>
@@ -117,7 +113,7 @@ export default function Login() {
             />
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'owner' }}>
           <div className="form-group">
             <label htmlFor="exampleInputText3">Proprietário(a)</label>
@@ -126,11 +122,11 @@ export default function Login() {
               className="form-control"
               id="exampleInputText3"
               placeholder="Digite o nome do(a) proprietário(a)"
-              style={{width: '100hw' }}
+              style={{ width: '100hw' }}
             />
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'phone' }}>
           <div className="form-group">
             <label htmlFor="exampleInputText4">Telefone/Celular</label>
@@ -143,7 +139,7 @@ export default function Login() {
             />
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'email' }}>
           <div className="form-group" >
             <label htmlFor="exampleInputEmail1">Email</label>
@@ -162,7 +158,7 @@ export default function Login() {
             )}
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'password' }}>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Senha</label>
@@ -172,7 +168,7 @@ export default function Login() {
                 className="form-control"
                 id="exampleInputPassword1"
                 placeholder="Digite sua senha"
-                style={{width: '100hw' }}
+                style={{ width: '100hw' }}
               />
               <div
                 style={{ cursor: 'pointer', marginLeft: '10px' }}
@@ -187,7 +183,7 @@ export default function Login() {
             </div>
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'confirmPassword' }}>
           <div className="form-group">
             <label htmlFor="exampleInputPassword1">Confirmar senha</label>
@@ -197,7 +193,7 @@ export default function Login() {
                 className="form-control"
                 id="exampleInputPassword1"
                 placeholder="Digite sua senha"
-                style={{ width: '100hw'}}
+                style={{ width: '100hw' }}
               />
               <div
                 style={{ cursor: 'pointer', marginLeft: '10px' }}
@@ -212,7 +208,7 @@ export default function Login() {
             </div>
           </div>
         </div>
-  
+
         <div style={{ gridArea: 'description' }}>
           <div className="form-group" >
             <label htmlFor="exampleInputText4">O que sua empresa faz?</label>
@@ -228,7 +224,7 @@ export default function Login() {
           </div>
         </div>
       </form>
-  
+
       <div style={{ textAlign: 'center', marginTop: '50px' }}>
         <BTN
           borderRadius={10}
@@ -240,7 +236,7 @@ export default function Login() {
           height="50px"
         ></BTN>
       </div>
-  
+
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <Link
           style={{ textDecoration: 'none', color: 'black' }}
@@ -252,7 +248,7 @@ export default function Login() {
       </div>
     </main>
   );
-  
+
 }
 
 // 'use client'

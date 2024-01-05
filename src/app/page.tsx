@@ -7,15 +7,16 @@ import { Input } from "@/components/input/input";
 import Link from 'next/link';
 import BarChart from '@/components/grafics/Bar';
 import LineChart from '@/components/grafics/Line';
+import PieChart from '@/components/grafics/Pie';
 
 export default function Home() {
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
+    <main style={{ display: 'flex', height: '100vh' }}>
       <MyAside />
 
-      <main style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+      <section style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-          <div style={{ padding: '20px', width: '600px', height: '400px' }}>
+          <div style={{ width: '600px', height: '400px' }}>
             <BarChart />
           </div>
 
@@ -23,15 +24,15 @@ export default function Home() {
             <h1>Gráfico 2</h1>
           </div>
 
-          <div style={{ padding: '20px', width: '600px', height: '400px', color: 'white' }}>
+          <div style={{ width: '600px', height: '400px', color: 'white' }}>
             <LineChart />
           </div>
 
-          <div style={{ backgroundColor: 'purple', padding: '20px', width: '600px', height: '400px', color: 'white' }}>
-            <h1>Gráfico 4</h1>
+          <div style={{ width: '600px', height: '400px', color: 'white' }}>
+            <PieChart />
           </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
