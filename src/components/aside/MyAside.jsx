@@ -21,21 +21,21 @@ const MyAside = () => {
                 <label htmlFor="endDate">Data Fim</label>
                 <Input height="30px" type="date" id="endDate" />
                 <label htmlFor="client">Cliente</label>
-                <Input height="20px" id="client" />
+                <Input height="30px" id="client" />
                 <label htmlFor="product">Produto</label>
-                <Input height="20px" id="product" />
+                <Input height="30px" id="product" />
                 <label htmlFor="service">Serviço</label>
-                <Input height="20px" id="service" />
+                <Input height="30px" id="service" />
             </div>
             <div className="logout">
                 <p title="Logout" className="logout-icon">
                     <a href="/login"><i className="bi bi-box-arrow-in-right"></i></a>
                 </p>
                 <div className="info">
-                <p title="Informações sobre Kósmos Tecnologia" className="info-icon">
-                    <i className="bi bi-info-circle"></i>
-                </p>
-            </div>
+                    <p title="Informações sobre Kósmos Tecnologia" className="info-icon">
+                        <i className="bi bi-info-circle"></i>
+                    </p>
+                </div>
             </div>
         </aside>
     );
