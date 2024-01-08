@@ -28,7 +28,8 @@ export default function Home() {
             <LineChart />
           </div>
 
-          <div style={{ width: '600px', height: '400px', color: 'white' }}>
+          <div style={{ width: '600px', height: '400px', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+
             <PieChart />
           </div>
         </div>
