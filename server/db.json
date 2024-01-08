@@ -1,40 +1,112 @@
 {
-  "empresas": [
+  "companies": [
     {
       "nomeEmpresa": "marcelodev",
       "cnpj": "25639874521",
       "cep": "5014287",
       "telefone": "85693265874",
-      "email": "marcelolopesvarzea@gmail.com",
+      "email": "studioYoga@gmail.com",
       "senha": "123654987",
-      "id": 1,
-      "produtos": [
-        1100,
-        500,
-        50,
-        1300,
-        850,
-        3700,
-        400,
-        2300,
-        100,
-        600,
-        300,
-        1500
+      "id": "studioYoga@gmail.com",
+      "products": [
+        {
+          "months": "Janeiro",
+          "productsValue": 1100
+        },
+        {
+          "months": "Fevereiro",
+          "productsValue": 500
+        },
+        {
+          "months": "Março",
+          "productsValue": 50
+        },
+        {
+          "months": "Abril",
+          "productsValue": 850
+        },
+        {
+          "months": "Maio",
+          "productsValue": 3700
+        },
+        {
+          "months": "Junho",
+          "productsValue": 400
+        },
+        {
+          "months": "Julho",
+          "productsValue": 2300
+        },
+        {
+          "months": "Agosto",
+          "productsValue": 100
+        },
+        {
+          "months": "Setembro",
+          "productsValue": 600
+        },
+        {
+          "months": "Outubro",
+          "productsValue": 300
+        },
+        {
+          "months": "Novembro",
+          "productsValue": 1500
+        },
+        {
+          "months": "Dezembro",
+          "productsValue": 1100
+        }
       ],
-      "servicos": [
-        250,
-        900,
-        2250,
-        1300,
-        500,
-        2300,
-        800,
-        1300,
-        300,
-        750,
-        450,
-        2500
+      "services": [
+        {
+          "months": "Janeiro",
+          "servicesValue": 1300
+        },
+        {
+          "months": "Fevereiro",
+          "servicesValue": 800
+        },
+        {
+          "months": "Março",
+          "servicesValue": 2300
+        },
+        {
+          "months": "Abril",
+          "servicesValue": 500
+        },
+        {
+          "months": "Maio",
+          "servicesValue": 1300
+        },
+        {
+          "months": "Junho",
+          "servicesValue": 2250
+        },
+        {
+          "months": "Julho",
+          "servicesValue": 900
+        },
+        {
+          "months": "Agosto",
+          "servicesValue": 250
+        },
+        {
+          "months": "Setembro",
+          "servicesValue": 300
+        },
+        {
+          "months": "Outubro",
+          "servicesValue": 750
+        },
+        {
+          "months": "Novembro",
+          "servicesValue": 450
+        },
+        {
+          "months": "Dezembro",
+          "servicesValue": 2500
+        }
       ]
     }
   ]
