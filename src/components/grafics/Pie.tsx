@@ -27,7 +27,7 @@ export default function PieChart() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await api.get('http://localhost:3001/empresas');
+                const response = await api.get('http://localhost:3001/companies');
                 setDatas(response.data);
             } catch (error) {
                 console.error('Erro ao obter dados do banco:', error);
@@ -37,8 +37,8 @@ export default function PieChart() {
         fetchData();
     }, []);
 
-    const totalServices = datas.map(item => item.servicos.reduce((total: number, numero: number) => total + numero, 0))
-    const totalProducts = datas.map(item => item.produtos.reduce((total: number, numero: number) => total + numero, 0))
+    const totalServices = datas.map(item => item.services.map((e: any) => e.servicesValue).reduce((total: number, numero: number) => total + numero, 0))
+    const totalProducts = datas.map(item => item.products.map((e: any) => e.productsValue).reduce((total: number, numero: number) => total + numero, 0))
 
     const data = {
         labels: [
@@ -50,7 +50,7 @@ export default function PieChart() {
             label: 'Ganhos',
             data: [totalServices, totalProducts],
             backgroundColor: [
-                'rgb(255, 99, 132)',
+                'rgba(7, 247, 7, 0.9)',
                 'rgb(54, 162, 235)',
             ],
             hoverOffset: 4
