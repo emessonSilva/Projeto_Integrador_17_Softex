@@ -20,7 +20,7 @@ interface Company {
     services: Service[];
 }
 
-export default function LineChart() {
+export default function HorizontalBar() {
 
     ChartJS.register(CategoryScale, LinearScale,  BarElement, Title, Tooltip, Legend);
 
