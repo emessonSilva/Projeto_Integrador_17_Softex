@@ -24,9 +24,19 @@ interface Company {
     products: Product[];
     services: Service[];
 }
+  
+interface LineChartProps {
+    filters: {
+        startDate: string;
+        endDate: string;
+        client: string;
+        product: string;
+        service: string;
+    }
+}
 
-export default function LineChart() {
 
+const LineChart: React.FC<LineChartProps> = ({ filters }) => {
     ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend);
 
     const [datas, setDatas] = useState<Company[]>([]);
@@ -58,7 +68,7 @@ export default function LineChart() {
         };
 
         fetchData();
-    }, []);
+    }, [filters]);
 
     const labels = datas.length > 0 ? datas[0].services.map(item => item.months) : [];
     const servicesData = datas.map(e => e.services.map(item => item.servicesValue)).flat();
@@ -84,3 +94,4 @@ export default function LineChart() {
     return <Line options={options} data={data} />;
 };
 
+export default LineChart

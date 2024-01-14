@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-import {Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { api } from '../../../services/api';
-
 
 interface Product {
     months: string;
@@ -20,9 +19,18 @@ interface Company {
     services: Service[];
 }
 
-export default function LineChart() {
+interface BarChartProps {
+    filters: {
+        startDate: string;
+        endDate: string;
+        client: string;
+        product: string;
+        service: string;
+    };
+}
 
-    ChartJS.register(CategoryScale, LinearScale,  BarElement, Title, Tooltip, Legend);
+const BarChart: React.FC<BarChartProps> = ({ filters }) => {
+    ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
     const [datas, setDatas] = useState<Company[]>([]);
 
@@ -39,27 +47,23 @@ export default function LineChart() {
         },
     };
 
-
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await api.get('http://localhost:3001/companies');
                 setDatas(response.data);
-                console.log(datas)
             } catch (error) {
                 console.error('Erro ao obter dados do banco:', error);
             }
         };
 
         fetchData();
-    }, []);
+    }, [filters]); 
 
     const labels = datas.length > 0 ? datas[0].services.map(item => item.months) : [];
     const servicesData = datas.map(e => e.services.map(item => item.servicesValue)).flat();
     const productsData = datas.map(e => e.products.map(item => item.productsValue)).flat();
 
-    console.log(servicesData)
     const data = {
         labels,
         datasets: [
@@ -76,5 +80,7 @@ export default function LineChart() {
         ],
     };
 
-    return < Bar options={options} data={data} />;
+    return <Bar options={options} data={data} />;
 };
+
+export default BarChart;

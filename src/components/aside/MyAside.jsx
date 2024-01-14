@@ -1,8 +1,22 @@
-import React from 'react';
+
 import { Input } from "@/components/input/input";
 import './MyAside.css';
+import React, { useState} from 'react';
 
-const MyAside = () => {
+
+
+
+const MyAside = ({onFilterChange}) => {
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [client, setClient] = useState('');
+    const [product, setProduct] = useState('');
+    const [service, setService] = useState('');
+
+    const handleFilterChange = () => {
+        onFilterChange({ startDate, endDate, client, product, service});
+        
+    }
     return (
         <aside className="my-aside">
             <div className="company-info">
@@ -17,15 +31,16 @@ const MyAside = () => {
             <div className="filters">
                 <p className="filter-title">Filtros</p>
                 <label htmlFor="startDate">Data Início</label>
-                <Input height="30px" type="date" id="startDate" />
+                <Input height="30px" type="date" id="startDate" onChange={(e) => setStartDate(e.target.value)}  />
                 <label htmlFor="endDate">Data Fim</label>
-                <Input height="30px" type="date" id="endDate" />
+                <Input height="30px" type="date" id="endDate" onChange= {(e) => setEndDate(e.target.value)} />
                 <label htmlFor="client">Cliente</label>
-                <Input height="30px" id="client" />
+                <Input height="30px" id="client" onChange={() => setClient(e.target.value)} />
                 <label htmlFor="product">Produto</label>
-                <Input height="30px" id="product" />
+                <Input height="30px" id="product" onChange={(e) => setProduct(e.target.value)} />
                 <label htmlFor="service">Serviço</label>
-                <Input height="30px" id="service" />
+                <Input height="30px" id="service" onChange={(e) => setService(e.target.value)} />
+                <button onClick={handleFilterChange} >Aplicar Filtros</button>
             </div>
             <div className="logout">
                 <p title="Logout" className="logout-icon">

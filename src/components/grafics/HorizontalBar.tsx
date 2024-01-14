@@ -19,9 +19,17 @@ interface Company {
     products: Product[];
     services: Service[];
 }
+interface HorizontalBarProps {
+    filters: {
+        startDate: string;
+        endDate: string;
+        client: string;
+        service: string;
+    };
+}
 
-export default function HorizontalBar() {
 
+const HorizontalBar:React.FC<HorizontalBarProps> = ({ filters }) => {
     ChartJS.register(CategoryScale, LinearScale,  BarElement, Title, Tooltip, Legend);
 
     const [datas, setDatas] = useState<Company[]>([]);
@@ -53,7 +61,7 @@ export default function HorizontalBar() {
         };
 
         fetchData();
-    }, []);
+    }, [filters]);
 
     const labels = datas.length > 0 ? datas[0].services.map(item => item.months) : [];
     const servicesData = datas.map(e => e.services.map(item => item.servicesValue)).flat();
@@ -78,3 +86,4 @@ export default function HorizontalBar() {
 
     return < Bar options={options} data={data} />;
 };
+export default HorizontalBar;
