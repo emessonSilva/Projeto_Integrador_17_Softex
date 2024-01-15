@@ -107,6 +107,68 @@
           "months": "Dezembro",
           "servicesValue": 2500
         }
+      ],
+      "students": [
+        {
+          "months": "Janeiro",
+          "absences": 5,
+          "attends": 35
+        },
+        {
+          "months": "Fevereiro",
+          "absences": 2,
+          "attends": 38
+        },
+        {
+          "months": "Março",
+          "absences": 10,
+          "attends": 30
+        },
+        {
+          "months": "Abril",
+          "absences": 15,
+          "attends": 25
+        },
+        {
+          "months": "Maio",
+          "absences": 6,
+          "attends": 34
+        },
+        {
+          "months": "Junho",
+          "absences": 1,
+          "attends": 39
+        },
+        {
+          "months": "Julho",
+          "absences": 8,
+          "attends": 32
+        },
+        {
+          "months": "Agosto",
+          "absences": 2,
+          "attends": 38
+        },
+        {
+          "months": "Setembro",
+          "absences": 6,
+          "attends": 34
+        },
+        {
+          "months": "Outubro",
+          "absences": 3,
+          "attends": 37
+        },
+        {
+          "months": "Novembro",
+          "absences": 11,
+          "attends": 29
+        },
+        {
+          "months": "Dezembro",
+          "absences": 14,
+          "attends": 26
+        }
       ]
     }
   ]
