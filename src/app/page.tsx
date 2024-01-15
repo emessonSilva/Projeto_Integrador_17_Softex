@@ -34,25 +34,25 @@ export default function Home() {
 
 
   return (
-    <main style={{ display: 'flex' }}>
+    <main style={{ display: 'flex', backgroundColor: '#010C15' }}>
       <MyAside onFilterChange={handleFilterChange}/>
 
       <section style={{ padding:"10px" ,display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
         {/* <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr'}}> */}
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px' }}>
             <LineChart filters={filters} />
           </div>
 
-          <div style={{   color: 'white' ,display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div style={{   color: 'white' ,display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px' }}>
             <BarChart filters={filters} />
           </div>
 
-          <div style={{  color: 'white' ,display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div style={{  color: 'white' ,display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px' }}>
           <PieChart />
           </div>
 
-          <div style={{  color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{  color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px'  }}>
           <HorizontalBar filters={filters}/>
             
           </div>

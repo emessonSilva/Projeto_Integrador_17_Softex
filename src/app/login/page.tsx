@@ -15,16 +15,9 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function Login() {
 
-<<<<<<< HEAD
   const [email, setEmail] = useState<string>('')
   const [validEmail, setValidEmail] = useState<boolean>(true)
   const [password, setPassword] = useState<boolean>(false)
-  const [isEmailValid, setIsEmailValid] = useState(true);
-=======
-  const [email, setEmail] = useState<string>('')
-  const [validEmail, setValidEmail] = useState<boolean>(true)
-  const [password, setPassword] = useState<boolean>(false)
->>>>>>> 75a815b8eb2fd1741d8a9d9b2184e515a18ca186
 
   //funçao para checar caracteres do email 
   function emailChecked(email: string): boolean {
@@ -44,78 +37,6 @@ export default function Login() {
     setPassword(!password)
   }
 
-<<<<<<< HEAD
-  const handleLogin = async () => {
-    try {
-      if (!validEmail) {
-        setIsEmailValid(false);
-        return;
-      }
-
-      const response = await fetch(`http://192.168.3.42:3001/verificar-email?email=${email}`);
-      const data = await response.json();
-
-      if (data.emailExistente) {
-        console.log('Email válido. Prosseguir com a autenticação...');
-        return <Link href="/dashboard"><a>Dashboard</a></Link>;
-      } else {
-        // email n existe
-        setIsEmailValid(false);
-      }
-    } catch (error) {
-      console.error('Erro ao verificar o email:', error);
-    }
-  };
-
-
-  return (
-    <main>
-      <div className="img" style={{ textAlign: 'center', marginTop: '10px' }}>
-        <img style={{ width: '350px' }} src="/logo.png" alt="Logo da empresa Kosmos TI" />
-      </div>
-
-      <div className="title" style={{ textAlign: 'center', marginTop: '50px' }}>
-        <h1>Olá, seja bem-vindo!</h1>
-        <h2>Faça o seu login</h2>
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '40px' }}>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1" style={{ marginBottom: '10px' }}>Email</label>
-          <input
-            type="email"
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            placeholder="Digite seu email"
-            value={email}
-            onChange={(e) => handleChangeEmail(e.target.value)}
-            style={{ width: '500px', marginRight: '10px' }}
-          />
-        </div>
-        {!validEmail && <p style={{ color: 'red', marginRight: '400px' }}>E-mail inválido</p>}
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px' }}>
-        <div className="form-group" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginLeft: '24px' }}>
-          <label htmlFor="exampleInputPassword1">Senha</label>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <input
-              type={password ? 'text' : 'password'}
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Digite sua senha"
-              style={{ width: '500px', marginTop: '10px' }}
-            />
-            <div style={{ cursor: 'pointer', marginTop: '10px' }} onClick={showPassword}>
-              {password ? (
-                <i className="bi bi-eye" style={{ marginLeft: '10px', color: 'black' }}></i>
-              ) : (
-                <i className="bi bi-eye-slash" style={{ marginLeft: '10px', color: 'black' }}></i>
-              )}
-            </div>
-          </div>
-=======
   return (
     <main>
             <div className="img" style={{ textAlign: 'center', marginTop: '10px' }}>
@@ -161,7 +82,6 @@ export default function Login() {
                     ) : (
                       <i className="bi bi-eye-slash" style={{ marginLeft: '10px', color: 'black' }}></i>
                     )}
->>>>>>> 75a815b8eb2fd1741d8a9d9b2184e515a18ca186
                   </div>
                 </div>
               </div>
@@ -180,3 +100,4 @@ export default function Login() {
             </div>
           </main>
           );
+}

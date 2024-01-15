@@ -2,6 +2,8 @@
 import { Input } from "@/components/input/input";
 import './MyAside.css';
 import React, { useState} from 'react';
+import { Button } from "react-bootstrap";
+import { BTN } from "../button/button";
 
 
 
@@ -40,7 +42,9 @@ const MyAside = ({onFilterChange}) => {
                 <Input height="30px" id="product" onChange={(e) => setProduct(e.target.value)} />
                 <label htmlFor="service">Serviço</label>
                 <Input height="30px" id="service" onChange={(e) => setService(e.target.value)} />
-                <button onClick={handleFilterChange} >Aplicar Filtros</button>
+                <div className="button">
+                    <BTN onClick={handleFilterChange} borderRadius={5} color="white" backgroundColor="#0F4EF0" type="button" name="Aplicar Filtros" width="150px" height="40px" ></BTN>
+                </div>
             </div>
             <div className="logout">
                 <p title="Logout" className="logout-icon">

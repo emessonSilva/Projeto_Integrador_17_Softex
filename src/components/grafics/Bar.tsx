@@ -39,10 +39,27 @@ const BarChart: React.FC<BarChartProps> = ({ filters }) => {
         plugins: {
             legend: {
                 position: 'top' as const,
+                labels: {
+                    color: 'white', // Cor do texto da legenda
+                },
             },
             title: {
                 display: true,
                 text: 'Ganhos',
+                color: 'white', // Cor do texto do título
+            },
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: 'white', 
+                },
+            },
+            y: {
+                ticks: {
+                    color: 'white',
+                    padding: 20, 
+                },
             },
         },
     };

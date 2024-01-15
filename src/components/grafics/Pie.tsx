@@ -16,14 +16,20 @@ export default function PieChart() {
         plugins: {
             legend: {
                 position: 'top' as const,
+                labels: {
+                    color: 'white',
+                },
             },
             title: {
                 display: true,
                 text: 'Ganhos',
+                color: 'white',
             },
         },
     };
-
+    
+    
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -56,5 +62,5 @@ export default function PieChart() {
             hoverOffset: 4
         }]
     };
-    return <Pie data={data} />;
+    return <Pie options={options} data={data} />;
 };

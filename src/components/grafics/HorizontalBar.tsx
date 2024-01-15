@@ -39,12 +39,29 @@ const HorizontalBar:React.FC<HorizontalBarProps> = ({ filters }) => {
         plugins: {
             legend: {
                 position: 'top' as const,
+                labels: {
+                    color: 'white', 
+                },
             },
             title: {
                 display: true,
                 text: 'Ganhos',
+                color: 'white',
             },
         },
+        scales: {
+            x: {
+                ticks: {
+                    color: 'white', 
+                },
+            },
+            y: {
+                ticks: {
+                    color: 'white',
+                    padding: 20, 
+                },
+            },
+        },    
     };
 
 
