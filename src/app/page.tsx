@@ -168,7 +168,6 @@ export default function Home() {
         position: 'top' as const,
       },
       title: {
-
         display: true,
         text: 'Alunos',
       },
@@ -177,16 +176,6 @@ export default function Home() {
   };
 
   return (
-<<<<<<< HEAD
-    <main style={{ display: 'flex', backgroundColor: '#010C15' }}>
-      <MyAside onFilterChange={handleFilterChange}/>
-
-      <section style={{ padding:"10px" ,display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
-        {/* <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr'}}> */}
-
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px' }}>
-            <LineChart filters={filters} />
-=======
     <main style={{ height: "100vh", padding: "5px", display: "flex", backgroundColor: "#cfcdcd" }}>
       <aside >
         <div className="company-info">
@@ -225,19 +214,11 @@ export default function Home() {
             <p title="Informações sobre Kósmos Tecnologia" className="info-icon">
               <i className="bi bi-info-circle"></i>
             </p>
->>>>>>> ft-marcelo
           </div>
         </div>
       </aside>
       <section style={{ padding: "20px", gap: "15px", display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
 
-<<<<<<< HEAD
-          <div style={{   color: 'white' ,display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px' }}>
-            <BarChart filters={filters} />
-          </div>
-
-          <div style={{  color: 'white' ,display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px' }}>
-=======
 
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Line options={LineOptions} data={LineData} />
@@ -247,7 +228,6 @@ export default function Home() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', justifySelf: 'center' }}>
->>>>>>> ft-marcelo
           <PieChart />
         </div>
 
@@ -257,14 +237,6 @@ export default function Home() {
         </div>
 
 
-<<<<<<< HEAD
-          <div style={{  color: 'black', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'black', borderRadius: '10px', margin: '10px'  }}>
-          <HorizontalBar filters={filters}/>
-            
-          </div>
-        {/* </div> */}
-=======
->>>>>>> ft-marcelo
       </section>
     </main>
   );
