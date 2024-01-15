@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Pie } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, ArcElement, PieController, Title, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, PieController, Title, Tooltip, Legend } from 'chart.js';
 import { api } from '../../../services/api';
 
 
 
 export default function PieChart() {
 
-    ChartJS.register(CategoryScale, LinearScale, ArcElement, PieController, Title, Tooltip, Legend);
+    ChartJS.register(ArcElement, PieController, Title, Tooltip, Legend);
 
     const [datas, setDatas] = useState<any[]>([]);
 
@@ -22,14 +22,13 @@ export default function PieChart() {
             },
             title: {
                 display: true,
-                text: 'Ganhos',
-                color: 'white',
+                text: 'Vendas',
             },
         },
     };
-    
-    
-    
+
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -62,5 +61,5 @@ export default function PieChart() {
             hoverOffset: 4
         }]
     };
-    return <Pie options={options} data={data} />;
+    return <Pie data={data} options={options} width="450px" />;
 };
