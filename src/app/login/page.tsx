@@ -13,6 +13,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 
+
+
 export default function Login() {
 
   const [email, setEmail] = useState<string>('')
@@ -92,7 +94,17 @@ export default function Login() {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '50px' }}>
-              <BTN borderRadius={10} color="white" backgroundColor="#0F4EF0" type="button" name="Entrar" width="200px" height="50px" ></BTN>
+              <Link href="/">
+                <BTN
+                  borderRadius={10}
+                  color="white"
+                  backgroundColor="#0F4EF0"
+                  type="button"
+                  name="Entrar"
+                  width="200px"
+                  height="50px"
+                ></BTN>
+              </Link>
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '60px' }}>
