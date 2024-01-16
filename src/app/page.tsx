@@ -58,7 +58,7 @@ export default function Home() {
         console.error('Erro ao obter dados do banco:', error);
       }
     };
-    filtrarMeses()
+
     fetchData();
   }, [startDate, endDate]);
 
@@ -86,28 +86,29 @@ export default function Home() {
       legend: {
         position: 'top' as const,
         labels: {
-          color:"white",
+          color: "white",
         }
       },
       title: {
         display: true,
         text: 'Alunos',
-        color:"white",
+        color: "white",
       },
     },
-    scales:{
-      x:{
-        ticks:{
-          color:"white",
+    scales: {
+      x: {
+        ticks: {
+          color: "white",
+        }
+      },
+      y: {
+        ticks: {
+          color: "white",
 
         },
-        y:{
-          ticks:{
-            color:'rgba(255,255,255)',
-            padding: 20,
-          },
-        }
       }
+
+
     }
   };
 
@@ -141,28 +142,30 @@ export default function Home() {
       legend: {
         position: 'top' as const,
         labels: {
-          color:"white",
+          color: "white",
         }
       },
       title: {
         display: true,
         text: 'Vendas',
-        color:"white",
-        
+        color: "white",
+
       },
     },
-    scales:{
-      x:{
-        ticks:{
-          color:"white",
-        },
-        y:{
-          ticks:{
-            color:"white",
-            padding:20,
-          },
+    scales: {
+      x: {
+        ticks: {
+          color: "white",
         }
+      },
+      y: {
+        ticks: {
+          color: "white",
+
+        },
       }
+
+
     }
   };
   const BarData = {
@@ -184,56 +187,58 @@ export default function Home() {
     ],
   };
 
+  const horizontalBarOptions = {
+    indexAxis: 'y',
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top' as const,
+        labels: {
+          color: "white",
+        }
+      },
+      title: {
+        display: true,
+        text: 'Alunos',
+        color: "white",
+
+      },
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "white",
+        }
+      },
+      y: {
+        ticks: {
+          color: "white",
+
+        },
+      }
+
+
+    }
+
+  };
   const horizontalBarData = {
     labels,
     datasets: [
       {
-        indexAxis: "y",
+        color: "white",
         label: 'Ausências',
         data: absencesData,
         backgroundColor: 'rgba(7, 247, 7, 0.9)',
       },
       {
-        indexAxis: "y",
+        color: "white",
         label: 'Presenças',
         data: attendsData,
         backgroundColor: 'rgba(15, 150, 240, 0.95)',
       },
     ],
   };
-  const horizontalBarOptions = {
 
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-        labels:{
-          color:"white",
-        }
-      },
-      title: {
-        display: true,
-        text: 'Vendas',
-        color:"white",
-        
-      },
-    },
-    scales:{
-      x:{
-        ticks:{
-          color:"white",
-        },
-        y:{
-          ticks:{
-            color:"white",
-            
-          },
-        }
-      }
-
-    }
-
-  };
 
   return (
     <main style={{ height: "100vh", padding: "5px", display: "flex", backgroundColor: "#010c15" }}>
@@ -287,7 +292,7 @@ export default function Home() {
           <Bar options={horizontalBarOptions} data={horizontalBarData} />
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifySelf: 'center' }}>
+        <div style={{ display: 'flex', justifySelf: 'center', minWidth: "450px" }}>
           <PieChart />
         </div>
 

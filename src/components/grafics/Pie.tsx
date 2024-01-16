@@ -26,7 +26,7 @@ export default function PieChart() {
                 color: 'white',
             },
         },
-        
+
     };
 
 
@@ -63,5 +63,5 @@ export default function PieChart() {
             hoverOffset: 4
         }]
     };
-    return <Pie data={data} options={options}/>;
+    return <Pie data={data} options={options} />;
 };
