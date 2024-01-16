@@ -8,6 +8,9 @@ import { useState } from "react";
 import { api } from "../../../services/api";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import Alert from 'react-bootstrap/Alert';
+import { Modal, Button } from 'react-bootstrap';
+
 
 
 export default function Login() {
@@ -15,8 +18,14 @@ export default function Login() {
   const [email, setEmail] = useState<string>('')
   const [validEmail, setValidEmail] = useState<boolean>(true)
   const [password, setPassword] = useState<boolean>(false)
+  
+  const [showModal, setShowModal] = useState<boolean>(false);
+const [formError, setFormError] = useState<string | null>(null);
 
-  //funçao para checar caracteres do email 
+
+
+
+//funçao para checar caracteres do email 
   function emailChecked(email: string): boolean {
     const regex = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
     return regex.test(email);
@@ -32,7 +41,20 @@ export default function Login() {
   function showPassword() {
     setPassword(!password)
   }
-
+  
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+  
+    
+    if (!validEmail) {
+      setFormError('Preencha os dados de registro');
+      setShowModal(true);
+      return;
+    }
+  
+    
+    setFormError(null);
+  }
   //   //funçao para salvar dados digitados
   // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   const { name, value } = e.target;
@@ -51,6 +73,8 @@ export default function Login() {
     <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div className="title" style={{ textAlign: 'center', marginTop: '10px' }}>
         <h1>Cadastre-se</h1>
+        
+
       </div>
 
       <div style={{ height: '4px', width: '70%', backgroundColor: 'black', borderRadius: '2px', marginTop: '10px' }} />
@@ -226,16 +250,20 @@ export default function Login() {
       </form>
 
       <div style={{ textAlign: 'center', marginTop: '50px' }}>
-        <BTN
-          borderRadius={10}
-          color="white"
-          backgroundColor="#0F4EF0"
-          type="button"
-          name="Cadastrar"
-          width="200px"
-          height="50px"
-        ></BTN>
+      <button
+          style={{
+            borderRadius: '10px',
+            color: 'white',
+            backgroundColor: '#0F4EF0',
+            width: '200px',
+            height: '50px',
+          }}
+          onClick={handleSubmit} // Adiciona a função de handleSubmit ao botão
+        >
+          Cadastrar
+        </button>
       </div>
+    
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <Link
@@ -245,77 +273,21 @@ export default function Login() {
         >
           Já tem uma conta? Entre
         </Link>
+        <Modal show={showModal} onHide={() => setShowModal(false)}>
+      <Modal.Header closeButton>
+        <Modal.Title>Erro</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>{formError}</p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={() => setShowModal(false)}>
+          Fechar
+        </Button>
+      </Modal.Footer>
+    </Modal>
       </div>
     </main>
   );
 
 }
-
-// 'use client'
-
-// import { BTN } from "@/components/button/button";
-// import { Input } from "@/components/input/input";
-// import Link from "next/link";
-// import { useState } from 'react'
-// import { api } from "../../../services/api";
-
-
-// export default function Register() {
-
-//   const [formData, setFormData] = useState({
-//     nomeEmpresa: '',
-//     cnpj: '',
-//     cep: '',
-//     telefone: '',
-//     email: '',
-//     senha: '',
-//     confirmarSenha: '',
-//   })
-
-//   //funçao para salvar dados digitados
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const { name, value } = e.target;
-//     setFormData((prevData) => ({ ...prevData, [name]: value }));
-//   };
-
-//   //funçao para enviar formulario
-//   async function handleSubmit(e: React.FormEvent) {
-//     e.preventDefault();
-
-//     const response = await api.post("/empresas", formData);
-//   };
-
-//   return (
-//     <main>
-//        <div style={{ maxWidth: '500px', margin: 'auto' }}>
-//       <div>
-//         <h1>Cadastre-se</h1>
-//       </div>
-//       <form onSubmit={handleSubmit}>
-//         <div> <input type="text" placeholder="NOME DA EMPRESA" style={styles.input}  value={formData.nomeEmpresa} onChange={handleChange} /></div>
-
-//         <div><Input placeholder="CNPJ/MEI" type="text" name="cnpj" value={formData.cnpj} onChange={handleChange} /></div>
-
-//         <div><Input placeholder="CEP" type="text" name="cep" value={formData.cep} onChange={handleChange} /></div>
-
-//         <div><Input placeholder="Telefone" name="telefone" value={formData.telefone} onChange={handleChange} /></div>
-
-//         <div><Input placeholder="Email" type="email" name="email" value={formData.email} onChange={handleChange} /></div>
-
-//         <div><Input placeholder="Senha" type="password" name="senha" value={formData.senha} onChange={handleChange} /></div>
-
-//         <div><Input placeholder="Confirmar Senha" type="password" name="confirmarSenha" value={formData.confirmarSenha} onChange={handleChange} /></div>
-
-//         <div>
-//           <textarea placeholder="O que a empresa faz?" cols={50} rows={6} required /></div>
-//         <div><Link href="../login" title="Entrar com login e senha">Já tem uma conta? Entre</Link></div>
-
-//         <div>
-//           <BTN type="submit" name="Cadastrar" width="140px" height="50px" />
-//         </div>
-//       </form>
-//       </div>
-//     </main>
-//   );
-// }
-

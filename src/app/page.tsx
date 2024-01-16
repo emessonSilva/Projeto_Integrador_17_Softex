@@ -292,7 +292,7 @@ export default function Home() {
           <Bar options={horizontalBarOptions} data={horizontalBarData} />
         </div>
 
-        <div style={{ display: 'flex', justifySelf: 'center', minWidth: "450px" }}>
+        <div style={{ display: 'flex', justifySelf: 'center' }}>
           <PieChart />
         </div>
 
