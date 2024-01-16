@@ -1,13 +1,13 @@
 {
   "companies": [
     {
-      "nomeEmpresa": "marcelodev",
+      "nomeEmpresa": "Estudio Yoga",
       "cnpj": "25639874521",
       "cep": "5014287",
       "telefone": "85693265874",
-      "email": "studioYoga@gmail.com",
-      "senha": "123654987",
-      "id": "studioYoga@gmail.com",
+      "email": "studioyoga@gmail.com",
+      "senha": "123456",
+      "id": "studioyoga@gmail.com",
       "products": [
         {
           "months": "Janeiro",

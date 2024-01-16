@@ -1,0 +1,108 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  height: 100vh;
+  
+}
+
+.recover-password-link {
+  text-decoration: none;
+}
+
+.my-aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px !important;
+  padding: 20px;
+  width: 250px;
+  background-color: #1e1d1d;
+  border-radius: 20px;
+  color: white;
+
+}
+
+i {
+color:white;
+}
+
+.company-info {
+  text-align: center;
+}
+
+.company-logo {
+  background: black;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.company-name {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: white
+}
+
+.profile-link,
+.logout,
+.info {
+  font-size: 2.5rem;
+}
+
+.filter-title {
+  font-size: 1.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+}
+
+ body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f1eded;
+  margin: 0;
+  background-color: black;
+ }
+
+/* main {
+  display: flex;
+  height: 100vh;
+  padding: 5px;
+}
+
+aside {
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px !important;
+  padding: 20px;
+  width: 250px;
+  background-color: #1e1d1d;
+  border-radius: 20px;
+  
+}
+
+.filters {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+} */
+
+ 

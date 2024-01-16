@@ -23,8 +23,10 @@ export default function PieChart() {
             title: {
                 display: true,
                 text: 'Vendas',
+                color: 'white',
             },
         },
+        
     };
 
 
@@ -61,5 +63,5 @@ export default function PieChart() {
             hoverOffset: 4
         }]
     };
-    return <Pie data={data} options={options} width="450px" />;
+    return <Pie data={data} options={options} width="450px" height="100px" min-width="200px" min-height="100px" />;
 };

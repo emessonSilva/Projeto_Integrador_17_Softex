@@ -11,6 +11,7 @@ import PieChart from '@/components/grafics/Pie';
 import React, { ReactNode, useEffect, useState } from 'react';
 import { api } from '../../services/api';
 import { BTN } from '@/components/button/button';
+import "@/app/page.css";
 
 interface Product {
   months: string;
@@ -84,12 +85,30 @@ export default function Home() {
     plugins: {
       legend: {
         position: 'top' as const,
+        labels: {
+          color:"white",
+        }
       },
       title: {
         display: true,
         text: 'Alunos',
+        color:"white",
       },
     },
+    scales:{
+      x:{
+        ticks:{
+          color:"white",
+
+        },
+        y:{
+          ticks:{
+            color:'rgba(255,255,255)',
+            padding: 20,
+          },
+        }
+      }
+    }
   };
 
   const LineData = {
@@ -99,11 +118,15 @@ export default function Home() {
         label: 'Ausências',
         data: absencesData,
         backgroundColor: 'rgba(7, 247, 7, 0.9)',
+        borderColor: 'rgba(7, 247, 7, 0.2)',
+        borderWidth: 2,
       },
       {
         label: 'Presenças',
         data: attendsData,
         backgroundColor: 'rgba(15, 150, 240, 0.95)',
+        borderColor: 'rgba(15, 150, 240, 1)',
+        borderWidth: 2,
       },
     ],
   };
@@ -117,12 +140,30 @@ export default function Home() {
       },
       legend: {
         position: 'top' as const,
+        labels: {
+          color:"white",
+        }
       },
       title: {
         display: true,
         text: 'Vendas',
+        color:"white",
+        
       },
     },
+    scales:{
+      x:{
+        ticks:{
+          color:"white",
+        },
+        y:{
+          ticks:{
+            color:"white",
+            padding:20,
+          },
+        }
+      }
+    }
   };
   const BarData = {
 
@@ -166,21 +207,40 @@ export default function Home() {
     plugins: {
       legend: {
         position: 'top' as const,
+        labels:{
+          color:"white",
+        }
       },
       title: {
         display: true,
-        text: 'Alunos',
+        text: 'Vendas',
+        color:"white",
+        
       },
     },
+    scales:{
+      x:{
+        ticks:{
+          color:"white",
+        },
+        y:{
+          ticks:{
+            color:"white",
+            
+          },
+        }
+      }
+
+    }
 
   };
 
   return (
-    <main style={{ height: "100vh", padding: "5px", display: "flex", backgroundColor: "#cfcdcd" }}>
-      <aside >
+    <main style={{ height: "100vh", padding: "5px", display: "flex", backgroundColor: "#010c15" }}>
+      <aside className='my-aside' >
         <div className="company-info">
-          <img className="company-logo" alt="Logo" />
-          <p className="company-name">{ }</p>
+          {/* <img className="company-logo" alt="Logo" /> */}
+          <p className="company-name">{datas.map(e => e.nomeEmpresa)}</p>
         </div>
         <div className="profile-link">
           <p title="Perfil" className="profile-icon">
@@ -189,7 +249,7 @@ export default function Home() {
         </div>
         <div className="filters">
           <p className="filter-title">Filtros</p>
-          <label htmlFor="startDate">Data Início</label>
+          {/* <label htmlFor="startDate">Data Início</label> */}
           <label htmlFor="filtroInicial">Mês Inicial: </label>
           <input
             type="text"
@@ -197,7 +257,7 @@ export default function Home() {
             value={startDate}
             onChange={(e) => setStartDate(e.target.value)}
           />
-          <label htmlFor="endDate">Data Fim</label>
+          <label htmlFor="endDate">Mês Final</label>
           <input
             type="text"
             id="endDate"
