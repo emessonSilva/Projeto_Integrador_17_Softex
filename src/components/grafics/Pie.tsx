@@ -63,5 +63,5 @@ export default function PieChart() {
             hoverOffset: 4
         }]
     };
-    return <Pie data={data} options={options} width="450px" height="100px" min-width="200px" min-height="100px" />;
+    return <Pie data={data} options={options}/>;
 };

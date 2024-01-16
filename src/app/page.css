@@ -5,7 +5,6 @@
   align-items: center;
   padding: 6rem;
   height: 100vh;
-  
 }
 
 .recover-password-link {
@@ -63,11 +62,20 @@ color:white;
 
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
  body {
   font-family: 'Arial', sans-serif;
   background-color: #f1eded;
   margin: 0;
   background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
  }
 
 /* main {
