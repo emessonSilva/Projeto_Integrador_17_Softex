@@ -1,0 +1,19 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 150px 550px 100px 550px;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.divNoveSenha,
+.divConfirmarSenha {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

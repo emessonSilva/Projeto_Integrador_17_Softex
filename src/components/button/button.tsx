@@ -6,18 +6,19 @@ interface propsButton {
   height?: string;
   backgroundColor?: string;
   color?: string;
+  margin?: number;
   borderRadius?: number;
   type?: "submit" | "reset" | "button" | undefined;
   onClick?: () => void;
   onSubmit?: () => void;
 }
 
-export function BTN({ name, width, height, backgroundColor, color, borderRadius, type, onClick, onSubmit }: propsButton) {
+export function BTN({ margin, name, width, height, backgroundColor, color, borderRadius, type, onClick, onSubmit }: propsButton) {
   return <button
     onSubmit={onSubmit}
     onClick={onClick}
     type={type}
-    style={{ width, height, backgroundColor, color, borderRadius }}
+    style={{ width, height, backgroundColor, color, borderRadius, margin }}
   >
     {name}
 

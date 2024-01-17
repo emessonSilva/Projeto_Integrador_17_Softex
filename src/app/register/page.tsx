@@ -3,7 +3,6 @@
 import React from "react";
 import { BTN } from "@/components/button/button";
 import Link from "next/link";
-import "../login/style.css";
 import { useState } from "react";
 import { api } from "../../../services/api";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,14 +17,14 @@ export default function Login() {
   const [email, setEmail] = useState<string>('')
   const [validEmail, setValidEmail] = useState<boolean>(true)
   const [password, setPassword] = useState<boolean>(false)
-  
+
   const [showModal, setShowModal] = useState<boolean>(false);
-const [formError, setFormError] = useState<string | null>(null);
+  const [formError, setFormError] = useState<string | null>(null);
 
 
 
 
-//funçao para checar caracteres do email 
+  //funçao para checar caracteres do email 
   function emailChecked(email: string): boolean {
     const regex = (/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
     return regex.test(email);
@@ -41,18 +40,18 @@ const [formError, setFormError] = useState<string | null>(null);
   function showPassword() {
     setPassword(!password)
   }
-  
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-  
-    
+
+
     if (!validEmail) {
       setFormError('Preencha os dados de registro');
       setShowModal(true);
       return;
     }
-  
-    
+
+
     setFormError(null);
   }
   //   //funçao para salvar dados digitados
@@ -73,7 +72,7 @@ const [formError, setFormError] = useState<string | null>(null);
     <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <div className="title" style={{ textAlign: 'center', marginTop: '10px' }}>
         <h1>Cadastre-se</h1>
-        
+
 
       </div>
 
@@ -248,44 +247,47 @@ const [formError, setFormError] = useState<string | null>(null);
           </div>
         </div>
       </form>
+      <Link
 
-      <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <button
-          style={{
-            borderRadius: '10px',
-            color: 'white',
-            backgroundColor: '#0F4EF0',
-            width: '200px',
-            height: '50px',
-          }}
-          onClick={handleSubmit} // Adiciona a função de handleSubmit ao botão
-        >
-          Cadastrar
-        </button>
-      </div>
-    
+        href="../login"
+
+      >
+        <div style={{ textAlign: 'center', marginTop: '50px' }}>
+          <BTN
+            borderRadius={10}
+            color='white'
+            backgroundColor='#0F4EF0'
+            width='200px'
+            height='50px'
+            name="Cadastrar"
+          >
+          </BTN>
+        </div>
+      </Link >
 
       <div style={{ textAlign: 'center', marginTop: '30px' }}>
         <Link
           style={{ textDecoration: 'none', color: 'black' }}
           href="../login"
-          title="Crie sua conta"
+          title="Faça o Login"
         >
           Já tem uma conta? Entre
-        </Link>
+        </Link >
         <Modal show={showModal} onHide={() => setShowModal(false)}>
-      <Modal.Header closeButton>
-        <Modal.Title>Erro</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <p>{formError}</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={() => setShowModal(false)}>
-          Fechar
-        </Button>
-      </Modal.Footer>
-    </Modal>
+          <Modal.Header closeButton>
+            <Modal.Title>Erro</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>{formError}</p>
+          </Modal.Body>
+          <Modal.Footer>
+
+            <Button variant="secondary" onClick={() => setShowModal(false)}>
+
+            </Button>
+
+          </Modal.Footer>
+        </Modal>
       </div>
     </main>
   );
